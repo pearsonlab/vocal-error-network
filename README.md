@@ -25,10 +25,15 @@ inhibitory-to-excitatory weights, driven by a sparse-coded spike train from a ga
 cochleagram front end.
 
 It reproduces the same qualitative result — the excitatory response to the bird's own song
-is cancelled while responses to novel or perturbed sound survive — and quantifies it
-against the Mandelblat-Cerf et al. (2014) K1–K4 measures: K1 7.78 Hz (target mean 7.7),
-K3 2.85×, K4 2.13×. The pipeline is fully seeded and reproducible end to end from the
-public song corpus in about ten minutes.
+is cancelled while responses to novel or perturbed sound survive — and is quantified
+against Mandelblat-Cerf et al. (2014) using their own criterion: 50 ms noise bursts during
+singing, with spike counts in 150 ms windows compared per neuron across renditions. The
+modelled response has an onset latency of 32.7 ms (bird: 23 ± 12 ms), peaks 48 ms after
+onset (bird: ~40–60 ms), and sits on a 2.2 Hz singing baseline (bird: 1–10 Hz), with 56%
+of units responding (bird: 41%, 7/17). Response magnitude remains the open problem, ~2×
+too strong: 1.79 extra spikes per responder against the bird's ~0.8–1.0. The pipeline is
+fully seeded and reproducible end to end from the public song corpus in about twenty
+minutes.
 
 It is a separate, independent implementation rather than a port of this code, and its
 dependency footprint is deliberately minimal (numpy and scipy for the core), so it can be
